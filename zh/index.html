@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>欢迎来上海 · 实用旅行指南</title>
+<meta name="description" content="上海旅行实用指南：58 个精选景点的门票价格、建议游玩时长、交通方式与闭馆日提醒，附行前须知、避坑清单与行程推荐。">
+<link rel="stylesheet" href="../assets/css/common.css">
+<link rel="stylesheet" href="../assets/css/theme-zh.css">
+</head>
+<body data-lang="zh">
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <div class="brand"><span class="dot"></span><span id="brand-text">欢迎来上海</span></div>
+    <nav class="navlinks" id="nav"></nav>
+    <a class="langbtn" id="swap" href="../en/" title="切换英文版">EN</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="hero"></section>
+
+  <section id="tips">
+    <div class="wrap">
+      <div id="alert"></div>
+      <div class="sechead">
+        <span class="num">01 / 行前必读</span>
+        <h2 id="sec-tips-title"></h2>
+        <p id="sec-tips-sub"></p>
+      </div>
+      <div class="notes-grid" id="notes"></div>
+      <div id="warnings"></div>
+    </div>
+  </section>
+
+  <section id="sights">
+    <div class="wrap">
+      <div class="sechead">
+        <span class="num">02 / 景点大全</span>
+        <h2 id="sec-sights-title"></h2>
+        <p id="sec-sights-sub"></p>
+      </div>
+      <div class="filters" id="filters"></div>
+      <div class="fav-strip" id="favstrip"></div>
+      <div class="count" id="count"></div>
+      <div class="cards" id="cards"></div>
+    </div>
+  </section>
+
+  <section id="itineraries">
+    <div class="wrap">
+      <div class="sechead">
+        <span class="num">03 / 行程推荐</span>
+        <h2 id="sec-itin-title"></h2>
+        <p id="sec-itin-sub"></p>
+      </div>
+      <div class="itins" id="itins"></div>
+    </div>
+  </section>
+
+  <section id="food">
+    <div class="wrap">
+      <div class="sechead">
+        <span class="num">04 / 上海味道</span>
+      <h2 id="sec-food-title"></h2>
+      <p id="sec-food-sub"></p>
+      </div>
+      <div class="food-grid" id="foodlist"></div>
+    </div>
+  </section>
+
+  <section id="practical">
+    <div class="wrap">
+      <div class="sechead">
+        <span class="num">05 / 实用速查</span>
+        <h2 id="sec-ess-title"></h2>
+        <p id="sec-ess-sub"></p>
+      </div>
+      <div class="ess-grid" id="ess"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="disclaimer" id="foot-note"></p>
+    <p>Shanghai Travel Guide · 1024 造物挑战<br />
+      <a class="repo-link" href="https://github.com/isnotry/travel-shanghai" target="_blank" rel="noopener noreferrer">GitHub 开源仓库</a>
+    </p>
+  </div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-bg"></div>
+  <div class="modal-box" id="modal-box"></div>
+</div>
+
+<button class="totop" id="totop" title="回到顶部" aria-label="回到顶部">&#8593;</button>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/content.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

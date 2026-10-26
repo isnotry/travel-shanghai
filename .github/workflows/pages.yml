@@ -1,0 +1,53 @@
+name: Deploy to GitHub Pages
+
+# 前置条件（只需设一次）：仓库 Settings → Pages → Build and deployment →
+# Source 必须是下拉框的「GitHub Actions」那一项。选成「Deploy from a branch」
+# 会得到 build_type: legacy，本站点各步里的 deploy-pages 会一直失败。
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Assemble site
+        # 只发布站点本身：入口页 + 两个版本 + 资源。
+        # README / LICENSE / tools / docs 留在仓库里，不进 Pages。
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r zh en assets _site/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

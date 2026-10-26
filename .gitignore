@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+._*
+
+# 编辑器
+.idea/
+.vscode/
+
+# 依赖与构建产物
+node_modules/
+dist/
+build/
+__pycache__/
+*.pyc
+
+# 写文章用的过程截图（README 只用 docs/ 里那两张）
+screenshots/
+
+# 本地工作痕迹（agent 记忆、发布元数据、临时文件）
+.workbuddy/
+.wbapp_*.genie
+temp/
+*.log
