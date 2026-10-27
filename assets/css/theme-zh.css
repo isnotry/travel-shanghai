@@ -226,7 +226,7 @@ body[data-lang='zh'] .card-more { font-size: 12.5px; padding-top: 11px; }
 /* ---------- notes / warnings ---------- */
 
 body[data-lang='zh'] .notes-grid {
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
 }
 
 body[data-lang='zh'] .note {
@@ -284,7 +284,7 @@ body[data-lang='zh'] .itin .note { font-size: 12.8px; line-height: 1.72; padding
 
 /* ---------- food / essentials ---------- */
 
-body[data-lang='zh'] .food-grid { grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; }
+body[data-lang='zh'] .food-grid { grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr)); gap: 18px; }
 body[data-lang='zh'] .food-item { padding: 20px 21px; border-radius: var(--radius); }
 body[data-lang='zh'] .food-item h4 { font-size: 15.5px; letter-spacing: .03em; }
 body[data-lang='zh'] .food-item p { font-size: 13px; line-height: 1.72; }
@@ -322,4 +322,20 @@ body[data-lang='zh'] .brand {
   body[data-lang='zh'] .hero-seal span { font-size: 29px; }
   body[data-lang='zh'] .hero h1 { letter-spacing: .04em; }
   body[data-lang='zh'] .hero-lead { margin-bottom: 34px; }
+}
+
+@media (max-width: 600px) {
+  body[data-lang='zh'] { --fs-h1: clamp(32px, 8vw, 44px); }
+  body[data-lang='zh'] .hero-in { padding: 52px 0 42px; gap: 18px; }
+  body[data-lang='zh'] .hero-seal { width: 44px; height: 44px; }
+  body[data-lang='zh'] .hero-seal span { font-size: 24px; }
+  body[data-lang='zh'] .hero h1 { margin-bottom: 22px; letter-spacing: .03em; }
+  body[data-lang='zh'] .hero-lead { font-size: 15.5px; padding-left: 14px; margin-bottom: 28px; }
+  body[data-lang='zh'] .stat { padding: 12px 14px; }
+  body[data-lang='zh'] .stat b { font-size: 24px; }
+  body[data-lang='zh'] .stat span { font-size: 11px; }
+  body[data-lang='zh'] .sechead h2 { font-size: 28px; letter-spacing: .03em; }
+  body[data-lang='zh'] .brand { font-size: 17px; }
+  body[data-lang='zh'] .card-body h3 { font-size: 17px; }
+  body[data-lang='zh'] .itin h3 { font-size: 19px; }
 }

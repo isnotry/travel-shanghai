@@ -21,3 +21,6 @@ screenshots/
 .wbapp_*.genie
 temp/
 *.log
+
+# AI 创作任务的过程文件（Brief、本地预览画廊）
+.creative-design/

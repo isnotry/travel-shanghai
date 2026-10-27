@@ -287,12 +287,14 @@
     var html = '';
     var i;
 
+    html += '<div class="chip-row">';
     for (i = 0; i < cats.length; i++) {
       html += '<button class="chip' + (state.cat === cats[i].id ? ' on' : '') +
         '" data-cat="' + cats[i].id + '">' + esc(cats[i].label) + '</button>';
     }
     html += '<button class="chip' + (state.monday ? ' on' : '') + '" data-monday="1">' +
       (lang === 'zh' ? '周一可去' : 'Open Mondays') + '</button>';
+    html += '</div>';
     html += '<div class="searchbox"><input id="q" type="search" placeholder="' +
       esc(ui.search) + '" value="' + esc(state.q) + '"></div>';
 
