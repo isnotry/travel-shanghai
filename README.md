@@ -24,6 +24,8 @@
 
 中英两版**不是互译**：中文版写给国内读者（地铁、抢票、天气穿搭、避坑），英文版写给入境游客（240 小时过境免签、支付、网络与访问受限的应用）。同一个景点有两套文案，两版还各有自己的配色与排版。
 
+配图说明：**58 张景点图片均由 AI 生成**，按统一的「蓝金时刻」写实摄影风格重制（冷蓝暮色天空 + 暖黄灯光、无文字无水印），完整风格规范与生产参数见 [design.md](design.md)。
+
 ## 特性
 
 - **58 个景点，7 个分类** —— 城市地标 9、园林古镇 11、博物馆 12、艺术街区 12、演出娱乐 4、亲子乐园 6、寺庙古建 4；每张卡片都带门票、开放时间、建议游玩、地铁出口
@@ -150,6 +152,7 @@ travel-shanghai/
 │   ├── screenshot.png          # 中文版截图
 │   └── screenshot-en.png       # 英文版截图
 ├── .github/workflows/pages.yml # 推到 main 时把站点发布到 GitHub Pages
+├── design.md                   # 景点配图视觉规范（AI 生成风格与验收标准）
 ├── README.md                   # 中文说明（默认）
 ├── README.en.md                # 英文说明
 └── LICENSE                     # MIT 许可证
@@ -159,7 +162,7 @@ travel-shanghai/
 
 - 内容全在 `assets/js/data.js`（58 个景点）和 `assets/js/content.js`（须知、行程、美食、速查、界面文案），改完刷新浏览器即可，**没有编译步骤**
 - 每个景点必须有 `zh` 和 `en` 两份文案，字段一一对应；`closed` 不允许只写一半
-- 新增一个景点：把 16:10 的图存成 `assets/img/<id>.jpg`（长边 1000px 够用）→ 在 `data.js` 对应分类段落里加一条 → 刷新
+- 新增一个景点：按 [design.md](design.md) 的规范生成 16:10 的图，存成 `assets/img/<id>.jpg`（长边 1000px 够用）→ 在 `data.js` 对应分类段落里加一条 → 刷新
 - 中文版主题变量在 `theme-zh.css`，英文版在 `theme-en.css`；`common.css` 只管结构，语言相关的样式别往里塞
 - `tools/build.js` 是给「会拦 CSS/JS 子资源」的托管平台用的：它把样式和脚本内联进 HTML，产出可整体上传的 `dist/`。GitHub Pages 不需要这一步
 - 推到 `main` 后 `.github/workflows/pages.yml` 会把 `index.html` / `zh` / `en` / `assets` 发布到 GitHub Pages（仓库的 Pages 源需设为 **GitHub Actions**）

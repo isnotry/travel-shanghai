@@ -24,6 +24,8 @@ It ships as **three static HTML files plus vanilla CSS/JS** - no npm, no framewo
 
 The Chinese and English editions are **not translations of each other**. The Chinese edition is written for domestic travellers (metro, timed-ticket booking, weather and clothing, tourist traps); the English edition is written for inbound visitors (the 240-hour visa-free transit, payments, blocked apps and connectivity). The same sight carries two separate write-ups, and each edition has its own colours and typography.
 
+A note on the imagery: **all 58 sight photos are AI-generated**, recreated in one consistent "blue-gold hour" photorealistic style (cool dusk-blue sky against warm lights, no text, no watermarks). The full style spec and acceptance criteria live in [design.md](design.md).
+
 ## Features
 
 - **58 sights across 7 categories** - 9 landmarks, 11 gardens and water towns, 12 museums, 12 art districts, 4 shows, 6 family attractions, 4 temples; every card carries admission, opening hours, time to allow and the metro exit
@@ -150,6 +152,7 @@ travel-shanghai/
 │   ├── screenshot.png          # Chinese edition screenshot
 │   └── screenshot-en.png       # English edition screenshot
 ├── .github/workflows/pages.yml # Publishes the site to GitHub Pages on every push to main
+├── design.md                   # Sight image design spec (AI-generated style and acceptance criteria)
 ├── README.md                   # Chinese readme (default)
 ├── README.en.md                # This file
 └── LICENSE                     # MIT licence
@@ -159,7 +162,7 @@ travel-shanghai/
 
 - All content lives in `assets/js/data.js` (the 58 sights) and `assets/js/content.js` (briefing, itineraries, food, essentials, UI strings). Edit and refresh - there is **no build step**
 - Every sight needs both a `zh` and an `en` write-up with matching fields; `closed` must never be half-filled
-- To add a sight: save a 16:10 photo as `assets/img/<id>.jpg` (1000px on the long edge is plenty), add a record to the matching category block in `data.js`, refresh
+- To add a sight: generate a 16:10 photo following [design.md](design.md), save it as `assets/img/<id>.jpg` (1000px on the long edge is plenty), add a record to the matching category block in `data.js`, refresh
 - Chinese theme variables live in `theme-zh.css`, English ones in `theme-en.css`; `common.css` holds structure only - keep language-specific styling out of it
 - `tools/build.js` exists for hosts that block CSS/JS sub-resources: it inlines styles and scripts into the HTML and writes an uploadable `dist/`. GitHub Pages does not need it
 - On every push to `main`, `.github/workflows/pages.yml` publishes `index.html`, `zh`, `en` and `assets` to GitHub Pages (the repo's Pages source must be set to **GitHub Actions**)
